@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}登录{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'mine/css/login.css' %}">
+{% endblock link %}
+{% block script %}
+<script type="application/javascript" src="{% static 'mine/js/login.js' %}"></script>
+{% endblock script %}
+
+
+
+{% block main %}
+<div id="loginDiv">
+    <!--点击返回按钮，返回到进入登录界面之前的界面-->
+    {% if gid %}
+        <a href="/{{ fromPath }}/{{ gid }}/{{ cid }}/{{ sid }}/"><p>&lt;返回</p></a>
+    {% else %}
+        <a href="/{{ fromPath }}/"><p>&lt;返回</p></a>
+    {% endif %}
+
+    <div id="box">
+        {% if gid %}
+        <form action="/login/?from={{ fromPath }}&gid={{ gid }}&cid={{ cid }}&sid={{ sid }}" method="post">
+        {% else %}
+        <form action="/login/?from={{ fromPath }}" method="post">
+        {% endif %}
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleInputEmail1">手机:</label>
+                <input value="" id="phone" type="text" class="form-control" id="exampleInputEmail1" placeholder="username" name="username">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">验证码:</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="验证码" name="verifycode">
+              </div>
+            <button id="smsBtn" type="button" class="btn btn-default">发送验证码</button>
+            <button type="submit" class="btn btn-default">登陆</button>
+        </form>
+    </div>
+</div>
+{% endblock main %}

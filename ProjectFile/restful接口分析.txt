@@ -1,0 +1,30 @@
+/homeinfo/
+{
+    "error":0,
+    "errormsg":"ok",
+    "code":200,
+    "data":{
+        "slider":[sliderobj1, sliderobj2, sliderobj3],
+        "mainlist":[
+            maindescriptionobj1,
+            {
+                "name":"",
+                "caid":"8767",
+                "products":[productobj1,productobj2,productobj3]
+            }
+        ]
+    }
+}
+
+/detail/catagery_id/product_id/
+商品对象
+
+
+
+
+
+/products/组id/子组id/排序id/
+{
+    ……,
+    "data":[product,……]
+}

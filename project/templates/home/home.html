@@ -1,0 +1,63 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}首页{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+{% endblock link %}
+{% block script %}
+<script type="application/javascript" src="{% static 'home/js/home.js' %}"></script>
+{% endblock script %}
+
+
+
+{% block main %}
+    <div id="homeDiv">
+        {# 轮播图 #}
+        <div class="swiper-container" id="slider">
+            <div class="swiper-wrapper">
+                {% for item in sliders %}
+                    <div class="swiper-slide">
+                        <a href="#"><img src="{{ item.img }}"></a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+
+        {# 主体信息渲染 #}
+        <div id="description">
+            {% for item in mainList %}
+                <div class="description-group">
+                    <div>
+                        <span class="category">{{ item.category_name }}</span>
+                        <span class="more"><a href="#">更多&gt;</a></span>
+                    </div>
+
+                    <div class="guide">
+                        <a href="#"><img src="{{ item.img }}"></a>
+                    </div>
+
+                    <ul>
+                        {% for product in item.products %}
+                            <li>
+                                <div class="product-img">
+                                    <!--/detail/组id/产品id/-->
+                                    <a href="/detail/{{ product.catagery_id }}/{{ product.product_id }}/"><img src="{{ product.img }}"></a>
+                                </div>
+                                <div class="long-name">
+                                    <div>{{ product.long_name }}</div>
+                                </div>
+                                <div>
+                                    <div>{{ product.specifics }}</div>
+                                    <div>{{ product.price }}</div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock main %}

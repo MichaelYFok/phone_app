@@ -1,0 +1,4 @@
+insert into slidershows(name, img, sort, trackid) values
+("缤纷酒饮", "http://img01.bqstatic.com//upload/activity/2017112416473259.jpg@90Q.jpg", 0, "focus1|22057"),
+("馋嘴零食", "http://img01.bqstatic.com//upload/activity/2018051618053240.png@90Q.png", 0, "focus1|22058"),
+("美味速食", "http://img01.bqstatic.com//upload/activity/2018051617560148.png@90Q.png", 0, "focus1|22062");

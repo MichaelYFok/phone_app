@@ -1,0 +1,134 @@
+轮播图表  表名slidershows    类名SliderShow
+name
+img
+sort
+trackid
+
+
+
+
+
+商品表    products
+name            商品名
+long_name       商品名+规格
+product_id      商品id
+store_nums      库存
+specifics       规格
+sort            排序   
+market_price    超市价格  
+price           价格     
+category_id     分组id
+child_cid       子组id
+img             商品图片
+keywords        搜索关键字
+brand_id        品牌id
+brand_name      品牌名称
+safe_day        保质期长度
+safe_unit       保质期单位模式
+safe_unit_desc  保质期单位  
+
+
+
+
+
+spa   单页面应用
+
+
+
+主体信息表   maindescriptions
+category_id     分组id
+category_name   分组名称
+sort            排序
+img             图片
+product1        商品1
+product2        商品2
+produect3       商品3
+
+
+
+
+
+分组表     categories
+category_id    组id（主键）
+category_name  名称
+sort           排序权重
+
+
+子组表     childcategories
+child_id       子组id（主键）
+child_name     名称
+sort           排序权重
+category       外键，所属的组
+
+
+
+
+
+用户表   users
+账号(主键)
+手机号(唯一)
+邮箱（唯一）
+密码(允许为空)
+头像
+创建时间
+最后登录时间
+token值
+积分
+会员等级
+-----------------------
+手机号
+token值
+创建时间
+最后登录时间
+
+
+
+
+
+地址表  addresses
+姓名
+性别
+手机号
+省份
+城市
+区县
+街道
+详细地址
+所属用户
+
+
+
+
+
+
+购物车表   carts
+用户          user
+所属订单      order   isNull
+商品          product
+数量          num
+是否选中      isChose
+是否进入订单  isOrder
+
+
+
+
+订单表      orders
+订单编号    ordier_id  主键
+所属用户    user
+邮寄地址    address
+总价        price
+状态        flag
+创建时间    createTime
+修改时间    lastTime
+是否删除    isDelete
+
+
+
+
+
+1、将商品添加到购物车
+
+
+
+
+
